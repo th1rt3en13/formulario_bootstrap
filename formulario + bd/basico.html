@@ -1,0 +1,161 @@
+<!-- Com os conhecimentos de HTML e Bootstrap, criar uma página HTML com um formulário para 
+inserção de dados de uma pessoa, com os seguintes campos: -->
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-bs-theme="dark">
+
+  <!-- cabeçalho -->
+  <head>
+
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> 
+      Formulário
+    </title>
+
+  </head>
+
+  <!-- corpo da pagina -->
+  <body class="d-flex align-items-center py-3 bg-body-tertiary">
+
+    <main class="w-100 m-auto">
+
+      <form>  <!-- formulario -->
+
+        <h1>
+          Cadastro de novo usuário:
+        </h1>
+
+        <label for="pnome">
+          Primeiro nome: 
+        </label><br>
+
+        <input type="text" id="pnome" name="pnome" required><br><br>
+
+        <label for="unome">
+          Último nome: 
+        </label><br>
+
+        <input type="text" id="unome" name="unome" required><br><br>
+        
+        <label for="pessoa">
+          Tipo de Pessoa: 
+        </label><br>
+
+        <select id="pessoa" name="pessoa" required>  <!-- lista pre definida de opcoes -->
+
+          <option value="" disabled selected>
+            Selecione 
+          </option>
+
+          <option value="CPF"> 
+            Pessoa Física
+          </option>
+
+          <option value="CNPJ"> 
+            Pessoa Jurídica
+          </option>
+
+        </select><br><br>
+
+        <label for="cpf_cpnj">
+          CPF/CPNJ: 
+        </label><br>
+
+        <input type="text" id="cpf_cnpj" name="cpf_cnpj" readonly><br><br>
+
+        <label for="nascimento">
+          Data de Nascimento: 
+        </label> <br>
+
+        <input type="date" id="nascimento" name="nascimento" required><br><br><!-- data -->
+
+        <label for="endereco">
+          Endereço: 
+        </label><br>
+
+        <input type="text" id="endereco" name="endereco" required><br><br>
+
+        <label for="bairro">
+          Bairro: 
+        </label><br>
+
+        <input type="text" id="bairro" name="bairro" required><br><br>
+
+        <label for="cep">
+          CEP: 
+        </label><br>
+
+        <input type="text" id="cep" name="cep" required><br><br>
+
+        <label for="estado">
+          Estado: 
+        </label><br>
+
+        <select name="estado" name="estado" required>
+
+          <option value="" disabled selected>
+            Selecione 
+          </option>
+
+          <option value="RJ">
+            Rio de Janeiro
+          </option>
+
+          <option value="SP">
+            São Paulo
+          </option>
+
+          <option value="MG">
+            Minas Gerais
+          </option>
+
+          <option value="ES">
+            Espirito Santo
+          </option>
+
+        </select><br><br>
+
+        <label for="cidade">
+          Cidade: 
+        </label><br>
+
+        <input type="text" id="cidade" name="cidade" required><br><br>
+
+        <label for="telefone">
+          Telefone: 
+        </label><br>
+
+        <input type="tel" id="telefone" name="telefone" placeholder="2222-2222" pattern="[0-9]{4}-[0-9]{4}" required><br><br>
+
+        <label for="celular">
+          Celular: 
+        </label><br>
+
+        <input type="cel" id="celular" name="celular" placeholder="99999-9999" pattern="[0-9]{5}-[0-9]{4}" required><br><br>
+
+        <label for="inscricao">
+          Inscrição Estadual: 
+        </label><br>
+
+        <input type="text" id="inscricao" name="inscricao" required><br><br>
+
+        <label for="inscricao">
+          Observações: 
+        </label><br>
+
+        <textarea id="observacao" name="observacao" rows="4" cols="50"></textarea><br><br>
+
+
+        <input type="submit" value="Salvar"> <!-- botao para enviar -->
+
+      
+      </form>
+
+    </main>
+  
+  </body>
+
+</html>

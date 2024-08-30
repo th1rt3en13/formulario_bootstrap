@@ -1,5 +1,3 @@
-<!-- Com os conhecimentos de HTML e Bootstrap, criar uma página HTML com um formulário para 
-inserção de dados de uma pessoa, com os seguintes campos: -->
 <?php
 $message = "";
 $id = null;
@@ -42,21 +40,23 @@ if (isset($_GET['id'])) {
     $stmt->close();
 }
 
+// Verificar se o formulário foi enviado
 if (isset($_POST['enviar'])) {
-    $nome = $_POST['nome'];
-    $sobrenome = $_POST['sobrenome'];
-    $pessoa = $_POST['pessoa'];
-    $cpf_cnpj = $_POST['cpf_cnpj'];
-    $nasc = $_POST['nasc'];
-    $endereco = $_POST['endereco'];
-    $bairro = $_POST['bairro'];
-    $cep = $_POST['cep'];
-    $estado = $_POST['estado'];
-    $cidade = $_POST['cidade'];
-    $tel = $_POST['tel'];
-    $cel = $_POST['cel'];
-    $inscricao = $_POST['inscricao'];
-    $observacao = $_POST['observacao'];
+    // Inicialização das variáveis com valores enviados via POST
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $sobrenome = isset($_POST['sobrenome']) ? $_POST['sobrenome'] : '';
+    $pessoa = isset($_POST['pessoa']) ? $_POST['pessoa'] : '';
+    $cpf_cnpj = isset($_POST['cpf_cnpj']) ? $_POST['cpf_cnpj'] : '';
+    $nasc = isset($_POST['nasc']) ? $_POST['nasc'] : '';
+    $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : '';
+    $bairro = isset($_POST['bairro']) ? $_POST['bairro'] : '';
+    $cep = isset($_POST['cep']) ? $_POST['cep'] : '';
+    $estado = isset($_POST['estado']) ? $_POST['estado'] : '';
+    $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : '';
+    $tel = isset($_POST['tel']) ? $_POST['tel'] : '';
+    $cel = isset($_POST['cel']) ? $_POST['cel'] : '';
+    $inscricao = isset($_POST['inscricao']) ? $_POST['inscricao'] : '';
+    $observacao = isset($_POST['observacao']) ? $_POST['observacao'] : '';
 
     // Preparar a consulta SQL com placeholders
     $stmt = $conexao->prepare("INSERT INTO pessoas (nome, sobrenome, tipo_pessoa, cpf_cnpj, data_nascimento, endereco, bairro, cep, estado, cidade, telefone, celular, inscricao_estadual, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -75,6 +75,7 @@ if (isset($_POST['enviar'])) {
     $stmt->close();
 }
 ?>
+
 
 
 <!DOCTYPE html>
